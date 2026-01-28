@@ -41,14 +41,102 @@ export default function About(){
         {/* Main description */}
         <motion.div variants={itemVariant} className="mb-16">
           <p className="text-slate-300 text-xl leading-relaxed font-light max-w-3xl">
-            I'm a cybersecurity engineer specializing in penetration testing, secure architecture design, and incident response. I help organizations build resilient systems by finding vulnerabilities before attackers do.
+            I'm a Full Stack Developer, Cybersecurity Engineer, and Data Scientist specializing in building secure, scalable systems. I help organizations protect their digital infrastructure while delivering intelligent applications and actionable insights from data.
           </p>
         </motion.div>
 
         <motion.div variants={itemVariant} className="mb-16">
           <p className="text-slate-300 text-lg leading-relaxed font-light max-w-3xl">
-            With expertise in web security, infrastructure hardening, and security-first development practices, I combine technical depth with pragmatic solutions to real-world security challenges.
+            With expertise spanning web development (React, Node.js, PostgreSQL), penetration testing & secure architecture design, and machine learning systems, I combine technical depth with pragmatic solutions to solve real-world challenges across security, scalability, and data-driven decision making.
           </p>
+        </motion.div>
+
+        {/* Skills & Technologies Detailed Section */}
+        <motion.div variants={itemVariant} className="mb-20">
+          <h3 className="text-3xl font-bold text-accent mb-6">Skills & Technologies</h3>
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Programming Languages */}
+            <div>
+              <h4 className="text-accent2 font-bold mb-2">💻 Programming Languages</h4>
+              <ul className="text-slate-300 text-sm list-disc ml-5">
+                <li>JavaScript (ES6+), TypeScript</li>
+                <li>Python (automation, scripting, data)</li>
+                <li>SQL (MySQL, PostgreSQL, SQLite)</li>
+                <li>C# (.NET, WinForms, desktop apps)</li>
+                <li>Java (NetBeans, OOP, desktop tools)</li>
+                <li>PHP (WordPress, backend logic)</li>
+              </ul>
+            </div>
+            {/* Web & App Dev */}
+            <div>
+              <h4 className="text-accent font-bold mb-2">🌐 Web & Application Development</h4>
+              <ul className="text-slate-300 text-sm list-disc ml-5">
+                <li>MERN/MEAN stack (MongoDB, Express, React/Angular, Node.js)</li>
+                <li>React.js (SPA, component-based UI)</li>
+                <li>WordPress (custom themes, plugins, REST integrations)</li>
+                <li>REST APIs, CRUD, JWT Auth, OAuth</li>
+                <li>Firebase (Auth, Firestore, Storage)</li>
+                <li>HTML5, CSS3, Tailwind, responsive design</li>
+                <li>Node.js (backend services, API servers)</li>
+                <li>API integrations (Stripe, AWS, OpenAI, etc.)</li>
+              </ul>
+            </div>
+            {/* Desktop Applications */}
+            <div>
+              <h4 className="text-accent3 font-bold mb-2">🖥️ Desktop Applications</h4>
+              <ul className="text-slate-300 text-sm list-disc ml-5">
+                <li>WinForms (.NET, C#)</li>
+                <li>Java (NetBeans, Swing, AWT)</li>
+                <li>Electron (JS desktop apps)</li>
+                <li>Console utilities (C#, Python, Java)</li>
+              </ul>
+            </div>
+            {/* Databases */}
+            <div>
+              <h4 className="text-accent font-bold mb-2">🗄️ Databases & Data Handling</h4>
+              <ul className="text-slate-300 text-sm list-disc ml-5">
+                <li>Relational DB design, normalization</li>
+                <li>SQL queries (JOINs, indexes, constraints)</li>
+                <li>Data modeling for business apps</li>
+                <li>CRUD operations, data validation</li>
+                <li>Firebase NoSQL, document stores</li>
+              </ul>
+            </div>
+            {/* Applied AI/ML */}
+            <div>
+              <h4 className="text-accent font-bold mb-2">🧠 Applied AI/ML & Automation</h4>
+              <ul className="text-slate-300 text-sm list-disc ml-5">
+                <li>Python for data processing, automation</li>
+                <li>Built chatbots, LLM-powered tools, prompt engineering</li>
+                <li>API/LLM integration (OpenAI, HuggingFace, etc.)</li>
+                <li>Basic ML: supervised/unsupervised, model training/eval</li>
+                <li>scikit-learn, pandas, numpy (practical use)</li>
+                <li>Automation with AWS, cloud APIs</li>
+              </ul>
+              <span className="text-xs text-slate-400 mt-1 block">Hands-on with real-world AI/ML integrations and automation</span>
+            </div>
+            {/* Media & Content Editing */}
+            <div>
+              <h4 className="text-accent2 font-bold mb-2">🎨 Media & Content Editing</h4>
+              <ul className="text-slate-300 text-sm list-disc ml-5">
+                <li>Photoshop, GIMP (image editing)</li>
+                <li>Audacity (audio editing)</li>
+                <li>Video editing (basic, e.g. Premiere, OpenShot)</li>
+                <li>Content creation for web & social</li>
+              </ul>
+            </div>
+            {/* Cybersecurity */}
+            <div>
+              <h4 className="text-accent3 font-bold mb-2">🔐 Cybersecurity & Risk (Practical)</h4>
+              <ul className="text-slate-300 text-sm list-disc ml-5">
+                <li>Incident response (phishing, ransomware, forensics)</li>
+                <li>Security best practices for SMEs</li>
+                <li>Authentication, access control, secure data handling</li>
+                <li>Risk-based system thinking, security docs/playbooks</li>
+                <li>Policy, compliance, audit documentation</li>
+              </ul>
+            </div>
+          </div>
         </motion.div>
         
         {/* Stats Grid */}
@@ -87,9 +175,9 @@ export default function About(){
           <div className="grid md:grid-cols-2 gap-8">
             {[
               { title: 'Security First', desc: 'Every decision is made with security in mind' },
-              { title: 'Transparent Communication', desc: 'Clear, honest reporting of findings' },
-              { title: 'Continuous Learning', desc: 'Staying ahead of emerging threats' },
-              { title: 'Ethical Hacking', desc: 'Responsible disclosure & ethical standards' },
+              { title: 'Code Quality', desc: 'Building scalable, maintainable, production-ready code' },
+              { title: 'Data-Driven', desc: 'Leveraging ML and analytics for informed decisions' },
+              { title: 'Continuous Learning', desc: 'Staying ahead of emerging technologies & threats' },
             ].map((value, i) => (
               <motion.div
                 key={i}

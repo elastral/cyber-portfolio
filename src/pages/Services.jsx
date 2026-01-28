@@ -6,41 +6,92 @@ const itemVariant = { hidden:{opacity:0, y:30}, show:{opacity:1, y:0, transition
 
 export default function Services(){
   const services = [
+    // CYBERSECURITY
     {
       title: 'Penetration Testing',
       desc: 'Web, API, and infrastructure assessments with clear remediation steps and detailed reporting.',
       icon: '🔍',
-      color: 'accent'
+      color: 'accent',
+      category: 'Cybersecurity'
     },
     {
       title: 'Secure Code Reviews',
       desc: 'Manual and automated reviews to find logic flaws, injection vulnerabilities, and insecure patterns.',
       icon: '📋',
-      color: 'accent2'
+      color: 'accent2',
+      category: 'Cybersecurity'
     },
     {
       title: 'Incident Response',
       desc: 'Rapid containment, triage, forensics, and post-incident hardening recommendations.',
       icon: '🚨',
-      color: 'accent3'
+      color: 'accent3',
+      category: 'Cybersecurity'
     },
     {
       title: 'Architecture Design',
       desc: 'Design secure cloud, containerized, and on-premise infrastructure with defense-in-depth principles.',
       icon: '🏗️',
-      color: 'accent'
+      color: 'accent',
+      category: 'Cybersecurity'
     },
     {
       title: 'Security Training',
       desc: 'Developer and ops team training on secure SDLC, OWASP top 10, and DevSecOps practices.',
       icon: '👨‍🎓',
-      color: 'accent2'
+      color: 'accent2',
+      category: 'Cybersecurity'
     },
     {
       title: 'Compliance & Governance',
       desc: 'Strategy and implementation for ISO 27001, SOC 2, HIPAA, and other regulatory requirements.',
       icon: '✅',
-      color: 'accent3'
+      color: 'accent3',
+      category: 'Cybersecurity'
+    },
+    // FULL STACK DEVELOPMENT
+    {
+      title: 'Web Application Development',
+      desc: 'Full-stack development of modern web apps using React, Node.js, PostgreSQL with responsive design.',
+      icon: '🌐',
+      color: 'accent',
+      category: 'Full Stack'
+    },
+    {
+      title: 'API & Backend Architecture',
+      desc: 'RESTful and GraphQL API design, microservices architecture, database optimization, and scalability.',
+      icon: '⚙️',
+      color: 'accent2',
+      category: 'Full Stack'
+    },
+    {
+      title: 'DevOps & Deployment',
+      desc: 'CI/CD pipelines, Docker containerization, cloud deployment (AWS, GCP, Azure), and infrastructure automation.',
+      icon: '🚀',
+      color: 'accent3',
+      category: 'Full Stack'
+    },
+    // DATA SCIENCE
+    {
+      title: 'Machine Learning Solutions',
+      desc: 'Custom ML models for classification, regression, NLP, and computer vision with full deployment pipeline.',
+      icon: '🤖',
+      color: 'accent',
+      category: 'Data Science'
+    },
+    {
+      title: 'Data Analytics & Visualization',
+      desc: 'ETL processes, data warehousing, dashboards with Tableau/Power BI, and actionable insights from big data.',
+      icon: '📊',
+      color: 'accent2',
+      category: 'Data Science'
+    },
+    {
+      title: 'AI & Predictive Analytics',
+      desc: 'Time-series forecasting, anomaly detection, recommendation systems, and predictive modeling.',
+      icon: '🔮',
+      color: 'accent3',
+      category: 'Data Science'
     },
   ]
 
@@ -81,7 +132,7 @@ export default function Services(){
             Services
           </h2>
           <div className="h-1 w-32 bg-gradient-to-r from-accent to-accent2 rounded-full" />
-          <p className="text-slate-300 text-lg mt-6 max-w-2xl">Comprehensive cybersecurity solutions tailored to protect and strengthen your organization's digital infrastructure</p>
+          <p className="text-slate-300 text-lg mt-6 max-w-3xl">Comprehensive expertise spanning cybersecurity, full-stack web development, and data science. Building secure, scalable, and intelligent solutions for modern enterprises.</p>
         </motion.div>
         
         {/* Services Grid */}
@@ -115,6 +166,13 @@ export default function Services(){
               />
               
               <div className="relative z-10">
+                {/* Category badge */}
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-mono px-2 py-1 rounded bg-accent/20 text-accent border border-accent/40">
+                    {svc.category}
+                  </span>
+                </div>
+                
                 {/* Icon with rotation animation */}
                 <motion.div 
                   className="text-6xl mb-6 inline-block"
@@ -155,9 +213,9 @@ export default function Services(){
         </motion.div>
 
         {/* Kali Linux themed section */}
-        <motion.div variants={itemVariant} className="mt-24 p-8 rounded-xl bg-gradient-to-r from-accent/5 to-accent2/5 border border-accent/30 relative overflow-hidden">
+        <motion.div variants={itemVariant} className="mt-24 p-10 rounded-xl bg-gradient-to-r from-accent/8 via-black to-accent2/8 border-2 border-accent/50 relative overflow-hidden">
           {/* Animated background lines */}
-          <div className="absolute inset-0 overflow-hidden opacity-20">
+          <div className="absolute inset-0 overflow-hidden opacity-30">
             <motion.div 
               className="absolute w-full h-1 bg-gradient-to-r from-accent to-transparent"
               style={{top: '20%'}}
@@ -179,24 +237,50 @@ export default function Services(){
           </div>
           
           <div className="relative z-10">
-            <div className="flex items-center gap-4 mb-4">
-              <span className="text-2xl">🛡️</span>
-              <h3 className="text-2xl font-bold text-accent">Penetration Testing Stack</h3>
+            {/* Kali ASCII header */}
+            <div className="mb-6 font-mono text-xs leading-tight text-accent/80 whitespace-pre overflow-x-auto">
+{`╔═══════════════════════════════════════╗
+║     KALI LINUX PENETRATION TESTING      ║
+║  The Industry Standard for Security     ║
+╚═══════════════════════════════════════╝`}
             </div>
-            <p className="text-slate-300 mb-6">
-              Using industry-standard tools and methodologies including Kali Linux, Burp Suite, Metasploit, and custom exploitation frameworks to identify and validate vulnerabilities before attackers do.
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {['Kali Linux', 'Burp Suite Pro', 'Metasploit', 'SQLmap', 'Wireshark', 'Nmap', 'Custom Tools'].map((tool, i) => (
-                <motion.span 
+            
+            <div className="flex flex-col md:flex-row items-start justify-between gap-8">
+              <div className="flex-1">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-3xl">🐉</span>
+                  <div>
+                    <h3 className="text-3xl font-black text-accent">Kali Linux Arsenal</h3>
+                    <p className="text-accent/70 font-mono text-xs">root@kali:~#</p>
+                  </div>
+                </div>
+                <p className="text-slate-300 mb-6 leading-relaxed">
+                  Leveraging the most powerful penetration testing distribution available. Kali Linux comes pre-loaded with 600+ security tools for vulnerability assessment, exploitation, and post-exploitation.
+                </p>
+              </div>
+              
+              {/* Terminal-style stats */}
+              <div className="bg-black/50 border border-accent/30 rounded p-4 font-mono text-xs text-accent min-w-fit">
+                <div>[SYSTEM STATUS]</div>
+                <div className="text-accent/70 mt-2">Tools: 600+</div>
+                <div className="text-accent/70">Modules: Active</div>
+                <div className="text-accent/70">Version: Latest</div>
+                <div className="text-accent/70 mt-2">[Connected]</div>
+              </div>
+            </div>
+            
+            <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-3">
+              {['Kali Linux', 'Burp Suite Pro', 'Metasploit', 'SQLmap', 'Wireshark', 'Nmap', 'Hashcat', 'John', 'Aircrack-ng'].map((tool, i) => (
+                <motion.div
                   key={i}
                   initial={{opacity: 0, scale: 0.8}}
                   whileInView={{opacity: 1, scale: 1}}
-                  transition={{delay: i * 0.05}}
-                  className="px-4 py-2 rounded-lg bg-accent/20 border border-accent/50 text-accent text-sm font-mono hover:bg-accent/30 transition-colors"
+                  transition={{delay: i * 0.04}}
+                  whileHover={{scale: 1.05, boxShadow: '0 0 15px rgba(0,255,153,0.3)'}}
+                  className="px-4 py-3 rounded-lg bg-gradient-to-r from-accent/15 to-accent2/10 border border-accent/50 text-accent text-sm font-mono hover:border-accent/80 transition-all cursor-default text-center"
                 >
-                  {tool}
-                </motion.span>
+                  $ {tool}
+                </motion.div>
               ))}
             </div>
           </div>

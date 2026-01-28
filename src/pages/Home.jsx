@@ -24,7 +24,8 @@ export default function Home({ typed }){
 
   // Split text into words for animation
   const titleWords = "Andromeda97".split('')
-  const descWords = "Building resilient systems, finding vulnerabilities before attackers do, and shipping secure code with security-first design principles.".split(' ')
+  // Update description and label for new roles
+  const descWords = "Full Stack Developer | Computer Systems Engineer | Network Administrator | Penetration Tester | Red Teamer | Security Researcher | Blue Teamer | Cloud Architect | DevOps Engineer. Building secure, scalable applications and infrastructure with expertise in web development, systems engineering, and cybersecurity.".split(' ')
 
   return (
     <main className="flex-1">
@@ -77,7 +78,7 @@ export default function Home({ typed }){
                   custom={0}
                   className="mb-8 inline-block"
                 >
-                  <span className="text-accent text-sm font-mono tracking-widest opacity-80 hover:opacity-100 transition-opacity">// cybersecurity engineer</span>
+                  <span className="text-accent text-sm font-mono tracking-widest opacity-80 hover:opacity-100 transition-opacity">// computer systems engineer & more</span>
                 </motion.div>
 
                 {/* Main title with character-by-character animation */}
@@ -103,14 +104,14 @@ export default function Home({ typed }){
                   ))}
                 </motion.h1>
                 
-                {/* Typed text with caret */}
+                {/* Typed text with caret, now double, with fallback */}
                 <motion.p 
                   variants={textVariants}
                   custom={2}
-                  className="hero-sub text-accent2 font-semibold mt-6 text-xl md:text-2xl tracking-wider mb-8"
+                  className="hero-sub text-accent2 font-semibold mt-6 text-xl md:text-2xl tracking-wider mb-8 flex flex-col md:flex-row gap-2 md:gap-8"
                 >
-                  <span id="type" className="inline-block min-w-[300px]">{typed}</span>
-                  <span className="caret animate-pulse">|</span>
+                  <span id="type1" className="inline-block min-w-[220px]">{Array.isArray(typed) ? typed[0] : ''}<span className="caret animate-pulse">|</span></span>
+                  <span id="type2" className="inline-block min-w-[220px]">{Array.isArray(typed) ? typed[1] : ''}<span className="caret animate-pulse">|</span></span>
                 </motion.p>
                 
                 {/* Divider line */}
@@ -122,7 +123,7 @@ export default function Home({ typed }){
                 
                 {/* Description with word-by-word animation */}
                 <motion.p 
-                  className="text-slate-300 max-w-3xl leading-relaxed text-lg font-light mb-12"
+                  className="text-slate-300 max-w-3xl leading-relaxed text-lg font-light mb-8"
                   initial="hidden"
                   animate="visible"
                   variants={containerVariants}
@@ -138,6 +139,63 @@ export default function Home({ typed }){
                     </motion.span>
                   ))}
                 </motion.p>
+
+                {/* Skills & Technologies Grid */}
+                <motion.div
+                  className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12"
+                  initial="hidden"
+                  animate="visible"
+                  variants={containerVariants}
+                >
+                  {/* Programming Languages */}
+                  <div className="panel p-4 rounded-xl bg-gradient-to-br from-accent/10 to-slate-900/40 border border-accent/30 flex flex-col items-center">
+                    <span className="text-2xl mb-2">💻</span>
+                    <span className="font-bold text-accent">Languages</span>
+                    <span className="text-xs text-slate-300 mt-1 text-center">JS/TS, Python, SQL, C#, Java, PHP</span>
+                  </div>
+                  {/* Web Stacks */}
+                  <div className="panel p-4 rounded-xl bg-gradient-to-br from-accent2/10 to-slate-900/40 border border-accent2/30 flex flex-col items-center">
+                    <span className="text-2xl mb-2">🌐</span>
+                    <span className="font-bold text-accent2">Web Stacks</span>
+                    <span className="text-xs text-slate-300 mt-1 text-center">MERN/MEAN, React, Node.js, WordPress, API Integrations</span>
+                  </div>
+                  {/* Desktop Apps */}
+                  <div className="panel p-4 rounded-xl bg-gradient-to-br from-accent3/10 to-slate-900/40 border border-accent3/30 flex flex-col items-center">
+                    <span className="text-2xl mb-2">🖥️</span>
+                    <span className="font-bold text-accent3">Desktop Apps</span>
+                    <span className="text-xs text-slate-300 mt-1 text-center">WinForms, NetBeans, Electron, Console Tools</span>
+                  </div>
+                  {/* Databases */}
+                  <div className="panel p-4 rounded-xl bg-gradient-to-br from-accent/10 to-slate-900/40 border border-accent/30 flex flex-col items-center">
+                    <span className="text-2xl mb-2">🗄️</span>
+                    <span className="font-bold text-accent">Databases</span>
+                    <span className="text-xs text-slate-300 mt-1 text-center">MySQL, PostgreSQL, SQLite, Firebase, Data Modeling</span>
+                  </div>
+                  {/* Applied AI/ML */}
+                  <div className="panel p-4 rounded-xl bg-gradient-to-br from-accent2/10 to-slate-900/40 border border-accent2/30 flex flex-col items-center">
+                    <span className="text-2xl mb-2">🧠</span>
+                    <span className="font-bold text-accent2">Applied AI/ML</span>
+                    <span className="text-xs text-slate-300 mt-1 text-center">Chatbots, LLMs, API/Cloud Integration, Automation</span>
+                  </div>
+                  {/* Media Editing */}
+                  <div className="panel p-4 rounded-xl bg-gradient-to-br from-accent3/10 to-slate-900/40 border border-accent3/30 flex flex-col items-center">
+                    <span className="text-2xl mb-2">🎨</span>
+                    <span className="font-bold text-accent3">Media Editing</span>
+                    <span className="text-xs text-slate-300 mt-1 text-center">Photoshop, Audacity, Video Tools, Content Creation</span>
+                  </div>
+                  {/* Cybersecurity */}
+                  <div className="panel p-4 rounded-xl bg-gradient-to-br from-accent/10 to-slate-900/40 border border-accent/30 flex flex-col items-center">
+                    <span className="text-2xl mb-2">🔐</span>
+                    <span className="font-bold text-accent">Cybersecurity</span>
+                    <span className="text-xs text-slate-300 mt-1 text-center">Incident Response, Auth, Risk, Security Docs</span>
+                  </div>
+                  {/* Compliance */}
+                  <div className="panel p-4 rounded-xl bg-gradient-to-br from-accent2/10 to-slate-900/40 border border-accent2/30 flex flex-col items-center">
+                    <span className="text-2xl mb-2">📋</span>
+                    <span className="font-bold text-accent2">Compliance</span>
+                    <span className="text-xs text-slate-300 mt-1 text-center">Docs, SOPs, Checklists, Policy Drafting</span>
+                  </div>
+                </motion.div>
                 
                 {/* CTA Buttons */}
                 <motion.div 

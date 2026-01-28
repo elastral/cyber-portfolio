@@ -6,41 +6,92 @@ const itemVariant = { hidden:{opacity:0, y:30}, show:{opacity:1, y:0, transition
 
 export default function Projects(){
   const projects = [
+    // CYBERSECURITY
     {
       title: 'Blue Team Dashboard',
       desc: 'Real-time SOC monitoring and alerting platform for security event aggregation and response orchestration.',
       stack: 'React, Node.js, Elasticsearch',
-      badge: '🛡️'
+      badge: '🛡️',
+      category: 'Cybersecurity'
     },
     {
       title: 'CTF Toolkit',
       desc: 'Collection of exploit scripts, payloads, and labs for training on common attack chains and defense mechanisms.',
       stack: 'Python, Bash, Docker',
-      badge: '🧪'
+      badge: '🧪',
+      category: 'Cybersecurity'
     },
     {
       title: 'Secure CI Templates',
       desc: 'Production-ready GitHub Actions and GitLab CI configurations for secure build and deployment workflows.',
       stack: 'YAML, Bash, Kubernetes',
-      badge: '🔒'
+      badge: '🔒',
+      category: 'Cybersecurity'
     },
     {
       title: 'Threat Intel API',
       desc: 'Internal threat intelligence platform aggregating feeds and providing real-time IOC lookups.',
       stack: 'Go, PostgreSQL, Redis',
-      badge: '📡'
+      badge: '📡',
+      category: 'Cybersecurity'
     },
     {
       title: 'Policy Automation',
       desc: 'Infrastructure-as-code policy engine for automated security compliance and configuration drift detection.',
       stack: 'Python, Terraform, AWS',
-      badge: '⚙️'
+      badge: '⚙️',
+      category: 'Cybersecurity'
     },
     {
       title: 'Vulnerability Scanner',
       desc: 'Custom SAST/DAST scanner integrating multiple engines and providing unified reporting.',
       stack: 'Python, Semgrep, OWASP ZAP',
-      badge: '🔍'
+      badge: '🔍',
+      category: 'Cybersecurity'
+    },
+    // FULL STACK DEVELOPMENT
+    {
+      title: 'E-Commerce Platform',
+      desc: 'Full-stack SaaS marketplace with Stripe integration, real-time inventory, and admin analytics dashboard.',
+      stack: 'React, Node.js, PostgreSQL, Stripe',
+      badge: '🛒',
+      category: 'Full Stack'
+    },
+    {
+      title: 'Real-time Chat Application',
+      desc: 'Scalable messaging platform with WebSocket support, encryption, and file sharing capabilities.',
+      stack: 'React, Socket.io, Node.js, MongoDB',
+      badge: '💬',
+      category: 'Full Stack'
+    },
+    {
+      title: 'SaaS Dashboard',
+      desc: 'Enterprise-grade analytics dashboard with real-time data visualization and customizable widgets.',
+      stack: 'React, GraphQL, PostgreSQL, Docker',
+      badge: '📈',
+      category: 'Full Stack'
+    },
+    // DATA SCIENCE
+    {
+      title: 'ML Fraud Detection',
+      desc: 'Machine learning model identifying financial fraud patterns with 98% accuracy using ensemble methods.',
+      stack: 'Python, XGBoost, scikit-learn, TensorFlow',
+      badge: '🤖',
+      category: 'Data Science'
+    },
+    {
+      title: 'Predictive Analytics Pipeline',
+      desc: 'ETL and ML pipeline for time-series forecasting of business metrics with automated retraining.',
+      stack: 'Python, Apache Airflow, PostgreSQL, Prophet',
+      badge: '📊',
+      category: 'Data Science'
+    },
+    {
+      title: 'Computer Vision System',
+      desc: 'Deep learning model for image classification and object detection with real-time inference.',
+      stack: 'Python, PyTorch, OpenCV, FastAPI',
+      badge: '👁️',
+      category: 'Data Science'
     },
   ]
 
@@ -81,7 +132,7 @@ export default function Projects(){
             Projects
           </h2>
           <div className="h-1 w-32 bg-gradient-to-r from-accent to-accent2 rounded-full" />
-          <p className="text-slate-300 text-lg mt-6 max-w-2xl">Security tools, automation frameworks, and infrastructure projects built to solve real-world challenges</p>
+          <p className="text-slate-300 text-lg mt-6 max-w-3xl">Security tools, full-stack applications, and ML systems built to solve real-world challenges across cybersecurity, web development, and data science</p>
         </motion.div>
         
         {/* Projects Grid */}
@@ -115,6 +166,13 @@ export default function Projects(){
               />
               
               <div className="relative z-10">
+                {/* Category badge */}
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-mono px-2 py-1 rounded bg-accent/20 text-accent border border-accent/40">
+                    {proj.category}
+                  </span>
+                </div>
+                
                 {/* Badge with animation */}
                 <motion.div 
                   className="text-4xl mb-4 inline-block"

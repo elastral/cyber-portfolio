@@ -26,35 +26,69 @@ function Nav(){
 }
 
 export default function App(){
-  const [typed, setTyped] = useState('')
-  const phrases = ['Cybersecurity Engineer', 'Penetration Tester', 'Security Researcher', 'Blue Teamer']
+  const [typed, setTyped] = useState(['', ''])
+  // Double positions at a time
+  const phrases = [
+    'Computer Systems Engineer', 'Network Administrator',
+    'Penetration Tester', 'Red Teamer',
+    'Security Researcher', 'Blue Teamer',
+    'Cloud Architect', 'DevOps Engineer'
+  ]
+  // pi is the index of the first phrase in the pair
   const [pi, setPi] = useState(0)
-  const [pos, setPos] = useState(0)
-  const [forward, setForward] = useState(true)
+  const [pos, setPos] = useState([0, 0])
+  const [forward, setForward] = useState([true, true])
   const [open, setOpen] = useState(false)
   const [scrollY, setScrollY] = useState(0)
   const [scrollProgress, setScrollProgress] = useState(0)
 
-  useEffect(()=>{
-    const current = phrases[pi]
-    let t = 80
-    if(!forward) t = 40
-    const id = setTimeout(()=>{
-      let nextPos = pos + (forward?1:-1)
-      if(nextPos > current.length){
-        setForward(false)
-        setPos(current.length)
-      } else if(nextPos < 0){
-        setPi((pi+1)%phrases.length)
-        setForward(true)
-        setPos(0)
+  useEffect(() => {
+    // Always show two phrases at a time, cycle smoothly
+    const current1 = phrases[pi]
+    const current2 = phrases[(pi + 1) % phrases.length]
+    let t = 80;
+    // If either is deleting, speed up
+    if (!forward[0] || !forward[1]) t = 40;
+    const id = setTimeout(() => {
+      let nextPos1 = pos[0] + (forward[0] ? 1 : -1);
+      let nextPos2 = pos[1] + (forward[1] ? 1 : -1);
+      let newForward = [...forward];
+      let newPos = [...pos];
+      let advance = false;
+      // Phrase 1
+      if (forward[0] && nextPos1 > current1.length) {
+        newForward[0] = false;
+        newPos[0] = current1.length;
+      } else if (!forward[0] && nextPos1 < 0) {
+        advance = true;
       } else {
-        setPos(nextPos)
+        newPos[0] = nextPos1;
       }
-      setTyped(current.slice(0, nextPos))
-    }, t)
-    return ()=> clearTimeout(id)
-  }, [pos, forward, pi])
+      // Phrase 2
+      if (forward[1] && nextPos2 > current2.length) {
+        newForward[1] = false;
+        newPos[1] = current2.length;
+      } else if (!forward[1] && nextPos2 < 0) {
+        advance = true;
+      } else {
+        newPos[1] = nextPos2;
+      }
+      if (advance) {
+        setPi((pi + 2) % phrases.length);
+        setForward([true, true]);
+        setPos([0, 0]);
+        setTyped(['', '']);
+      } else {
+        setForward(newForward);
+        setPos(newPos);
+        setTyped([
+          current1.slice(0, newPos[0]),
+          current2.slice(0, newPos[1])
+        ]);
+      }
+    }, t);
+    return () => clearTimeout(id);
+  }, [pos, forward, pi, phrases]);
 
   // Track scroll for parallax effects
   useEffect(()=>{
