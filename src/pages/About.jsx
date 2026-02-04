@@ -41,7 +41,7 @@ export default function About(){
         {/* Main description */}
         <motion.div variants={itemVariant} className="mb-16">
           <p className="text-slate-300 text-xl leading-relaxed font-light max-w-3xl">
-            I'm a Full Stack Developer, Cybersecurity Engineer, and Data Scientist specializing in building secure, scalable systems. I help organizations protect their digital infrastructure while delivering intelligent applications and actionable insights from data.
+            I'm a Full Stack Software Developer specializing in building secure, scalable systems and modern web applications.
           </p>
         </motion.div>
 

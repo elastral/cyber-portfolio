@@ -11,8 +11,8 @@ import Contact from './pages/Contact'
 function Nav(){
   return (
     <nav className="flex items-center justify-between p-6 md:px-8">
-      <Link to="/" className="flex items-center gap-2 group">
-        <div className="text-accent font-bold text-lg">◆ Andromeda97</div>
+      <Link to="/" className="flex items-center gap-2 group" replace>
+        <div className="text-accent font-bold text-lg">Welcome to IT</div>
         <div className="h-1 w-6 bg-gradient-to-r from-accent to-accent2 rounded group-hover:w-8 transition-all" />
       </Link>
       <div className="hidden md:flex space-x-8 text-slate-300">
@@ -162,7 +162,7 @@ export default function App(){
           <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-accent via-accent2 to-accent3" style={{width: `${scrollProgress * 100}%`, transition: 'width 0.3s ease'}} />
           
           <div className="max-w-6xl mx-auto flex items-center justify-between p-4">
-            <div className="text-accent font-bold text-lg">CyberPortfolio</div>
+            <Link to="/" className="text-accent font-bold text-lg" style={{textDecoration: 'none'}}>CyberPortfolio</Link>
             <div className="md:hidden">
               <button onClick={()=>setOpen(!open)} className="text-slate-200">{open? '✕':'☰'}</button>
             </div>
@@ -193,7 +193,7 @@ export default function App(){
       </Router>
 
       <footer className="py-12 border-t border-accent/10 bg-gradient-to-b from-transparent via-accent/5 to-transparent text-center">
-        <p className="text-slate-400 text-sm mb-2">© {new Date().getFullYear()} Andromeda97 · Cybersecurity Engineer</p>
+        <p className="text-slate-400 text-sm mb-2">© {new Date().getFullYear()} Welcome to IT · Cybersecurity Engineer</p>
         <p className="text-slate-500 text-xs">Building resilient systems • Finding vulnerabilities • Shipping secure code</p>
       </footer>
     </div>

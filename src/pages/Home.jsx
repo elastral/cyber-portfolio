@@ -22,10 +22,11 @@ export default function Home({ typed }){
     return ()=> window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Split text into words for animation
-  const titleWords = "Andromeda97".split('')
-  // Update description and label for new roles
-  const descWords = "Full Stack Developer | Computer Systems Engineer | Network Administrator | Penetration Tester | Red Teamer | Security Researcher | Blue Teamer | Cloud Architect | DevOps Engineer. Building secure, scalable applications and infrastructure with expertise in web development, systems engineering, and cybersecurity.".split(' ')
+
+  // Hero title
+  const titleWords = "Welcome to IT".split('')
+  // Short description for hero section
+  const descWords = "Empowering your ideas with modern, secure, and scalable web solutions.".split(' ')
 
   return (
     <main className="flex-1">
@@ -33,11 +34,11 @@ export default function Home({ typed }){
         {/* Ultra-smooth morphing animated background */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           {/* Dynamic gradient orbs with morph animations */}
-          <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-accent/8 rounded-full blur-3xl" 
+          <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-accent/8 rounded-full blur-3xl"
             style={{
               animation: 'morphFloat 20s ease-in-out infinite',
               filter: 'blur(80px)'
-            }} 
+            }}
           />
           <div className="absolute bottom-1/4 right-1/4 w-[700px] h-[700px] bg-accent2/6 rounded-full blur-3xl" 
             style={{
@@ -123,7 +124,7 @@ export default function Home({ typed }){
                 
                 {/* Description with word-by-word animation */}
                 <motion.p 
-                  className="text-slate-300 max-w-3xl leading-relaxed text-lg font-light mb-8"
+                  className="text-accent max-w-3xl leading-relaxed text-lg font-semibold mb-8 drop-shadow"
                   initial="hidden"
                   animate="visible"
                   variants={containerVariants}
